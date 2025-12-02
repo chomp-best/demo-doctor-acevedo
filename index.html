@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultorio Odontológico | Dr. Acevedo</title>
+    <!-- El título se actualizará automáticamente mediante JS, pero dejamos un fallback -->
+    <title>Consultorio Odontológico | Dr. Daniel Acevedo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -33,7 +34,8 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <i class="fa-solid fa-tooth text-dental-blue text-2xl"></i>
-                <span class="font-semibold text-xl text-gray-800 tracking-tight">Dr. Acevedo</span>
+                <!-- Clase 'doctor-name' añadida para actualización automática -->
+                <span class="doctor-name font-semibold text-xl text-gray-800 tracking-tight">Dr. Daniel Acevedo</span>
             </div>
             <div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#perfil" class="hover:text-dental-blue transition">Sobre Mí</a>
@@ -59,7 +61,8 @@
                 
                 <div class="w-full md:w-1/2 text-center md:text-left">
                     <span class="text-dental-blue font-semibold text-sm uppercase tracking-wider mb-2 block">Odontólogo Especialista</span>
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Dr. Acevedo</h1>
+                    <!-- Clase 'doctor-name' añadida para actualización automática -->
+                    <h1 class="doctor-name text-4xl md:text-5xl font-bold text-gray-900 mb-4">Dr. Daniel Acevedo</h1>
                     
                     <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-6 text-sm text-gray-500">
                         <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-cake-candles mr-2"></i>35 Años</span>
@@ -95,9 +98,8 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-gray-800">Limpieza Profunda</h3>
                     <p class="text-gray-500 mb-6 flex-grow">Eliminación de sarro y placa bacteriana con ultrasonido para prevenir enfermedades gingivales.</p>
-                    <!-- Link modificado con mensaje específico -->
                     <a href="#" class="whatsapp-link w-full block text-center border border-dental-blue text-dental-blue py-2 rounded-lg hover:bg-dental-blue hover:text-white transition font-medium" 
-                       data-message="Hola Dr. Acevedo, me gustaría consultar disponibilidad para una Limpieza Profunda." target="_blank">
+                       data-message="Hola Dr., me gustaría consultar disponibilidad para una Limpieza Profunda." target="_blank">
                         <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Turno
                     </a>
                 </div>
@@ -108,9 +110,8 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-gray-800">Blanqueamiento</h3>
                     <p class="text-gray-500 mb-6 flex-grow">Aclara el tono de tus dientes de manera segura y efectiva en una sola sesión o con tratamiento ambulatorio.</p>
-                    <!-- Link modificado con mensaje específico -->
                     <a href="#" class="whatsapp-link w-full block text-center border border-dental-blue text-dental-blue py-2 rounded-lg hover:bg-dental-blue hover:text-white transition font-medium" 
-                       data-message="Hola Dr. Acevedo, quisiera información y turnos para un Blanqueamiento Dental." target="_blank">
+                       data-message="Hola Dr., quisiera información y turnos para un Blanqueamiento Dental." target="_blank">
                         <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Turno
                     </a>
                 </div>
@@ -121,9 +122,8 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-gray-800">Ortodoncia Invisible</h3>
                     <p class="text-gray-500 mb-6 flex-grow">Alineación dental mediante férulas transparentes. Estética y cómoda sin los brackets tradicionales.</p>
-                    <!-- Link modificado con mensaje específico -->
                     <a href="#" class="whatsapp-link w-full block text-center border border-dental-blue text-dental-blue py-2 rounded-lg hover:bg-dental-blue hover:text-white transition font-medium" 
-                       data-message="Hola Dr. Acevedo, estoy interesado en el tratamiento de Ortodoncia Invisible." target="_blank">
+                       data-message="Hola Dr., estoy interesado en el tratamiento de Ortodoncia Invisible." target="_blank">
                         <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Turno
                     </a>
                 </div>
@@ -138,7 +138,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-gray-50 p-8 rounded-xl relative">
                     <i class="fa-solid fa-quote-left text-4xl text-gray-200 absolute top-4 left-4"></i>
-                    <p class="text-gray-600 italic mb-6 relative z-10 pt-4">"Tenía pánico de ir al dentista, pero el Dr. Acevedo fue increíblemente amable y paciente. El consultorio es impecable."</p>
+                    <p class="text-gray-600 italic mb-6 relative z-10 pt-4">"Tenía pánico de ir al dentista, pero el Doctor fue increíblemente amable y paciente. El consultorio es impecable."</p>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-500 font-bold">LC</div>
                         <div>
@@ -223,7 +223,7 @@
                 <div class="lg:w-2/3">
                     <div class="w-full h-96 bg-gray-800 rounded-xl overflow-hidden shadow-2xl border border-gray-700">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28314.409190533454!2d-58.8118826!3d-27.4910083!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456b2b2e581aa3%3A0x72c9911210bf96b!2sConsultorio%20Odontologico.%20Dra%20Diana%20Morales!5e0!3m2!1ses!2sar!4v1764638316202!5m2!1ses!2sar" 
+                            src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.3561534763985!2d-58.802440389359624!3d-27.489297076209333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456ba6b5e41027%3A0x79358c5556b530c9!2sConsultorio%20odontologico%20Od.%20Daniel%20Acevedo!5e0!3m2!1ses!2sar!4v1764691836780!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
                             width="100%" 
                             height="100%" 
                             style="border:0;" 
@@ -236,34 +236,50 @@
             </div>
 
             <div class="border-t border-gray-800 mt-16 pt-8 text-center text-sm text-gray-500">
-                &copy; 2023 Consultorio Odontológico Dr. Acevedo. Todos los derechos reservados.
+                &copy; 2023 Consultorio Odontológico <span class="doctor-name">Dr. Daniel Acevedo</span>. Todos los derechos reservados.
             </div>
         </div>
     </section>
 
     <!-- SCRIPT DE CONFIGURACIÓN -->
     <script>
-        // CONFIGURACIÓN DE CONTACTO
-        // Cambia estos valores para actualizar todo el sitio
-        const CONTACTO = {
-            whatsappNumber: "3794929082", // Número para el enlace (sin + ni espacios)
+        // ==========================================
+        // CONFIGURACIÓN GENERAL DEL SITIO
+        // Edita estos valores para cambiar los datos en toda la página
+        // ==========================================
+        const CONFIG = {
+            nombreDoctor: "Dr. Daniel Acevedo", // Cambia esto y se actualiza título, menú, perfil y footer
+            whatsappNumber: "37949290828",    // Número para el enlace (sin + ni espacios)
             whatsappDisplay: "3794929082" // Cómo se ve escrito en el pie de página
         };
 
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Actualizar texto del pie de página
+            // 1. Actualizar Nombre del Doctor en todo el sitio
+            const nameElements = document.querySelectorAll('.doctor-name');
+            nameElements.forEach(el => {
+                el.textContent = CONFIG.nombreDoctor;
+            });
+            // Actualizar también la etiqueta <title> del navegador
+            document.title = `Consultorio Odontológico | ${CONFIG.nombreDoctor}`;
+
+            // 2. Actualizar texto del teléfono en pie de página
             const phoneDisplay = document.getElementById('phone-display');
             if (phoneDisplay) {
-                phoneDisplay.textContent = CONTACTO.whatsappDisplay;
+                phoneDisplay.textContent = CONFIG.whatsappDisplay;
             }
 
-            // 2. Actualizar todos los botones de WhatsApp
+            // 3. Actualizar enlaces de WhatsApp
             const whatsappLinks = document.querySelectorAll('.whatsapp-link');
             whatsappLinks.forEach(link => {
                 // Obtenemos el mensaje personalizado de cada botón
-                const message = link.getAttribute('data-message') || "Hola, quisiera realizar una consulta.";
+                const rawMessage = link.getAttribute('data-message') || "Hola, quisiera realizar una consulta.";
+                // Reemplazamos "Dr. Acevedo" o "Dr." genérico por el nombre configurado si es necesario
+                // Aunque para WhatsApp suele ser mejor dejarlo corto como "Hola Dr.", 
+                // aquí podemos insertar el apellido si quisiéramos dinámicamente.
+                const message = rawMessage.replace('Dr. Acevedo', CONFIG.nombreDoctor);
+                
                 // Construimos la URL
-                link.href = `https://wa.me/${CONTACTO.whatsappNumber}?text=${encodeURIComponent(message)}`;
+                link.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
             });
         });
     </script>
