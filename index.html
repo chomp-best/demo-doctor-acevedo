@@ -223,9 +223,10 @@
                 <div class="lg:w-2/3">
                     <div class="w-full h-96 bg-gray-800 rounded-xl overflow-hidden shadow-2xl border border-gray-700">
                         <!-- El ID 'map-frame' permite que el script actualice el src automáticamente -->
+                        <!-- CAMBIO: src="about:blank" evita errores de carga inicial -->
                         <iframe 
                             id="map-frame"
-                            src=""
+                            src="about:blank"
                             width="100%" 
                             height="100%" 
                             style="border:0;" 
@@ -234,6 +235,7 @@
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
+                    <p class="text-xs text-gray-500 mt-2 text-center">*La ubicación se carga desde la configuración al final del archivo.</p>
                 </div>
             </div>
 
@@ -252,7 +254,7 @@
         const CONFIG = {
             nombreDoctor: "Dr. Daniel Acevedo", 
             
-            // MAPA: Pega aquí el link que obtienes de Google Maps -> Compartir -> Insertar mapa -> Copiar HTML (solo el contenido de src="")
+            // MAPA: Asegúrate de copiar todo el link dentro de las comillas
             mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.3561534763985!2d-58.802440389359624!3d-27.489297076209333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456ba6b5e41027%3A0x79358c5556b530c9!2sConsultorio%20odontologico%20Od.%20Daniel%20Acevedo!5e0!3m2!1ses!2sar!4v1764691999778!5m2!1ses!2sar",
             
             // WHATSAPP
@@ -282,10 +284,13 @@
                 link.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
             });
 
-            // 4. Actualizar Mapa
+            // 4. Actualizar Mapa (con verificación para evitar errores de carga)
             const mapFrame = document.getElementById('map-frame');
             if (mapFrame && CONFIG.mapUrl) {
-                mapFrame.src = CONFIG.mapUrl;
+                // Solo cargamos el mapa si la URL es diferente a about:blank
+                if (mapFrame.src !== CONFIG.mapUrl) {
+                    mapFrame.src = CONFIG.mapUrl;
+                }
             }
         });
     </script>
