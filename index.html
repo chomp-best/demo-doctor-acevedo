@@ -222,8 +222,10 @@
 
                 <div class="lg:w-2/3">
                     <div class="w-full h-96 bg-gray-800 rounded-xl overflow-hidden shadow-2xl border border-gray-700">
+                        <!-- El ID 'map-frame' permite que el script actualice el src automáticamente -->
                         <iframe 
-                            src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.3561534763985!2d-58.802440389359624!3d-27.489297076209333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456ba6b5e41027%3A0x79358c5556b530c9!2sConsultorio%20odontologico%20Od.%20Daniel%20Acevedo!5e0!3m2!1ses!2sar!4v1764691836780!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+                            id="map-frame"
+                            src=""
                             width="100%" 
                             height="100%" 
                             style="border:0;" 
@@ -248,21 +250,25 @@
         // Edita estos valores para cambiar los datos en toda la página
         // ==========================================
         const CONFIG = {
-            nombreDoctor: "Dr. Daniel Acevedo", // Cambia esto y se actualiza título, menú, perfil y footer
-            whatsappNumber: "37949290828",    // Número para el enlace (sin + ni espacios)
-            whatsappDisplay: "3794929082" // Cómo se ve escrito en el pie de página
+            nombreDoctor: "Dr. Daniel Acevedo", 
+            
+            // MAPA: Pega aquí el link que obtienes de Google Maps -> Compartir -> Insertar mapa -> Copiar HTML (solo el contenido de src="")
+            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.3561534763985!2d-58.802440389359624!3d-27.489297076209333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456ba6b5e41027%3A0x79358c5556b530c9!2sConsultorio%20odontologico%20Od.%20Daniel%20Acevedo!5e0!3m2!1ses!2sar!4v1764691999778!5m2!1ses!2sar",
+            
+            // WHATSAPP
+            whatsappNumber: "5493794929082",    // Formato internacional para link (54 + 9 + codigo area sin 0 + numero)
+            whatsappDisplay: "0379-4929082"     // Cómo se ve escrito en el pie de página
         };
 
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Actualizar Nombre del Doctor en todo el sitio
+            // 1. Actualizar Nombre del Doctor
             const nameElements = document.querySelectorAll('.doctor-name');
             nameElements.forEach(el => {
                 el.textContent = CONFIG.nombreDoctor;
             });
-            // Actualizar también la etiqueta <title> del navegador
             document.title = `Consultorio Odontológico | ${CONFIG.nombreDoctor}`;
 
-            // 2. Actualizar texto del teléfono en pie de página
+            // 2. Actualizar texto del teléfono
             const phoneDisplay = document.getElementById('phone-display');
             if (phoneDisplay) {
                 phoneDisplay.textContent = CONFIG.whatsappDisplay;
@@ -271,16 +277,16 @@
             // 3. Actualizar enlaces de WhatsApp
             const whatsappLinks = document.querySelectorAll('.whatsapp-link');
             whatsappLinks.forEach(link => {
-                // Obtenemos el mensaje personalizado de cada botón
                 const rawMessage = link.getAttribute('data-message') || "Hola, quisiera realizar una consulta.";
-                // Reemplazamos "Dr. Acevedo" o "Dr." genérico por el nombre configurado si es necesario
-                // Aunque para WhatsApp suele ser mejor dejarlo corto como "Hola Dr.", 
-                // aquí podemos insertar el apellido si quisiéramos dinámicamente.
                 const message = rawMessage.replace('Dr. Acevedo', CONFIG.nombreDoctor);
-                
-                // Construimos la URL
                 link.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
             });
+
+            // 4. Actualizar Mapa
+            const mapFrame = document.getElementById('map-frame');
+            if (mapFrame && CONFIG.mapUrl) {
+                mapFrame.src = CONFIG.mapUrl;
+            }
         });
     </script>
 
