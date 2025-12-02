@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorio Odontológico | Dr. Acevedo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dental-blue': '#0F766E', // Un tono Teal profesional
+                        'dental-light': '#F0FDFA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos suaves para el scroll */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700 antialiased">
+
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-tooth text-dental-blue text-2xl"></i>
+                <span class="font-semibold text-xl text-gray-800 tracking-tight">Dr. Acevedo</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#perfil" class="hover:text-dental-blue transition">Sobre Mí</a>
+                <a href="#servicios" class="hover:text-dental-blue transition">Tratamientos</a>
+                <a href="#testimonios" class="hover:text-dental-blue transition">Pacientes</a>
+                <a href="#contacto" class="hover:text-dental-blue transition">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="perfil" class="pt-32 pb-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-dental-light rounded-full blur-xl opacity-70"></div>
+                        <!-- Placeholder para imagen -->
+                        <div class="relative w-80 h-96 bg-gray-200 rounded-2xl shadow-xl z-10 flex items-center justify-center text-gray-500 font-bold text-lg border-4 border-white">
+                            aquí va su imagen
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <span class="text-dental-blue font-semibold text-sm uppercase tracking-wider mb-2 block">Odontólogo Especialista</span>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Dr. Acevedo</h1>
+                    
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-6 text-sm text-gray-500">
+                        <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-cake-candles mr-2"></i>35 Años</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-graduation-cap mr-2"></i>Egresado UBA</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-star mr-2"></i>Esp. Implantología</span>
+                    </div>
+
+                    <p class="text-lg leading-relaxed text-gray-600 mb-8">
+                        Mi enfoque combina la precisión clínica con la empatía humana. Entiendo que la visita al dentista puede generar ansiedad, por lo que he diseñado mi práctica para que sea una experiencia tranquila, indolora y transparente. Me apasiona devolver sonrisas y mejorar la calidad de vida de mis pacientes a través de la salud bucal.
+                    </p>
+                    
+                    <div class="flex justify-center md:justify-start gap-4">
+                        <a href="#contacto" class="bg-dental-blue text-white px-8 py-3 rounded-lg font-medium hover:bg-teal-800 transition shadow-lg shadow-teal-500/30">
+                            Agendar Primera Consulta
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-20 bg-dental-light/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Mis Servicios</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">Tratamientos integrales utilizando tecnología moderna y técnicas mínimamente invasivas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col">
+                    <div class="w-12 h-12 bg-teal-100 text-dental-blue rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-teeth-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Limpieza Profunda</h3>
+                    <p class="text-gray-500 mb-6 flex-grow">Eliminación de sarro y placa bacteriana con ultrasonido para prevenir enfermedades gingivales.</p>
+                    <a href="https://wa.me/1234567890?text=Hola,%20quisiera%20agendar%20un%20turno%20para%20una%20Limpieza%20Profunda" target="_blank" class="w-full block text-center border border-dental-blue text-dental-blue py-2 rounded-lg hover:bg-dental-blue hover:text-white transition font-medium">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Turno
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col">
+                    <div class="w-12 h-12 bg-teal-100 text-dental-blue rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Blanqueamiento</h3>
+                    <p class="text-gray-500 mb-6 flex-grow">Aclara el tono de tus dientes de manera segura y efectiva en una sola sesión o con tratamiento ambulatorio.</p>
+                    <a href="https://wa.me/1234567890?text=Hola,%20quisiera%20agendar%20un%20turno%20para%20un%20Blanqueamiento" target="_blank" class="w-full block text-center border border-dental-blue text-dental-blue py-2 rounded-lg hover:bg-dental-blue hover:text-white transition font-medium">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Turno
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col">
+                    <div class="w-12 h-12 bg-teal-100 text-dental-blue rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-notes-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Ortodoncia Invisible</h3>
+                    <p class="text-gray-500 mb-6 flex-grow">Alineación dental mediante férulas transparentes. Estética y cómoda sin los brackets tradicionales.</p>
+                    <a href="https://wa.me/1234567890?text=Hola,%20quisiera%20agendar%20un%20turno%20para%20Ortodoncia" target="_blank" class="w-full block text-center border border-dental-blue text-dental-blue py-2 rounded-lg hover:bg-dental-blue hover:text-white transition font-medium">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Turno
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-16">Lo que dicen mis pacientes</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-gray-200 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 italic mb-6 relative z-10 pt-4">"Tenía pánico de ir al dentista, pero el Dr. Acevedo fue increíblemente amable y paciente. El consultorio es impecable."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-500 font-bold">LC</div>
+                        <div>
+                            <p class="font-bold text-sm text-gray-900">Lucía Campos</p>
+                            <div class="text-yellow-400 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-gray-200 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 italic mb-6 relative z-10 pt-4">"Me realicé un blanqueamiento y los resultados superaron mis expectativas. Muy profesional y puntual."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-500 font-bold">MR</div>
+                        <div>
+                            <p class="font-bold text-sm text-gray-900">Martín Rodriguez</p>
+                            <div class="text-yellow-400 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-gray-200 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 italic mb-6 relative z-10 pt-4">"Excelente atención a los detalles. Me explicó todo el procedimiento antes de empezar. 100% recomendado."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-500 font-bold">SF</div>
+                        <div>
+                            <p class="font-bold text-sm text-gray-900">Sofía Fernández</p>
+                            <div class="text-yellow-400 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="bg-gray-900 text-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+                <div class="lg:w-1/3 space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Visítanos</h3>
+                        <p class="text-gray-400 mb-6">Estamos comprometidos con tu salud bucal. Contáctanos para agendar tu cita o resolver tus dudas.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-phone mt-1 text-dental-blue"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-200">Teléfono / WhatsApp</h4>
+                                <p class="text-gray-400">+54 9 11 1234-5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-clock mt-1 text-dental-blue"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-200">Horarios de Atención</h4>
+                                <p class="text-gray-400">Lun - Vie: 09:00 - 18:00</p>
+                                <p class="text-gray-400">Sáb: 09:00 - 13:00</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-envelope mt-1 text-dental-blue"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-200">Email</h4>
+                                <p class="text-gray-400">dr.acevedo@consultorio.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-2/3">
+                    <div class="w-full h-96 bg-gray-800 rounded-xl overflow-hidden shadow-2xl border border-gray-700">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28314.409190533454!2d-58.8118826!3d-27.4910083!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456b2b2e581aa3%3A0x72c9911210bf96b!2sConsultorio%20Odontologico.%20Dra%20Diana%20Morales!5e0!3m2!1ses!2sar!4v1764638316202!5m2!1ses!2sar" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center text-sm text-gray-500">
+                &copy; 2023 Consultorio Odontológico Dr. Acevedo. Todos los derechos reservados.
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
