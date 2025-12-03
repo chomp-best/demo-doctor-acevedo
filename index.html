@@ -29,17 +29,35 @@
 </head>
 <body class="bg-gray-50 text-gray-700 antialiased">
 
+    <!-- NAV ACTUALIZADO CON MENÚ MÓVIL -->
     <nav class="bg-white shadow-sm fixed w-full z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <i class="fa-solid fa-tooth text-dental-blue text-2xl"></i>
                 <span class="doctor-name font-semibold text-xl text-gray-800 tracking-tight">Dr. Daniel Acevedo</span>
             </div>
+            
+            <!-- Menú de Escritorio -->
             <div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#perfil" class="hover:text-dental-blue transition">Sobre Mí</a>
                 <a href="#servicios" class="hover:text-dental-blue transition">Tratamientos</a>
                 <a href="#testimonios" class="hover:text-dental-blue transition">Pacientes</a>
                 <a href="#contacto" class="hover:text-dental-blue transition">Contacto</a>
+            </div>
+
+            <!-- Botón Hamburguesa (Móvil) -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600 focus:outline-none hover:text-dental-blue p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Menú Desplegable (Móvil) - Oculto por defecto -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="flex flex-col px-6 py-4 space-y-4">
+                <a href="#perfil" class="mobile-link text-gray-600 hover:text-dental-blue hover:bg-gray-50 p-2 rounded transition font-medium">Sobre Mí</a>
+                <a href="#servicios" class="mobile-link text-gray-600 hover:text-dental-blue hover:bg-gray-50 p-2 rounded transition font-medium">Tratamientos</a>
+                <a href="#testimonios" class="mobile-link text-gray-600 hover:text-dental-blue hover:bg-gray-50 p-2 rounded transition font-medium">Pacientes</a>
+                <a href="#contacto" class="mobile-link text-gray-600 hover:text-dental-blue hover:bg-gray-50 p-2 rounded transition font-medium">Contacto</a>
             </div>
         </div>
     </nav>
@@ -73,6 +91,7 @@
                     
                     <div class="flex justify-center md:justify-start gap-4">
                         <a href="#contacto" class="bg-dental-blue text-white px-8 py-3 rounded-lg font-medium hover:bg-teal-800 transition shadow-lg shadow-teal-500/30">
+                            <i class="fa-brands fa-whatsapp mr-2"></i>
                             Agendar Primera Consulta
                         </a>
                     </div>
@@ -240,7 +259,7 @@
         </div>
     </section>
 
-    <!-- SCRIPT DE CONFIGURACIÓN -->
+    <!-- SCRIPT DE CONFIGURACIÓN Y LÓGICA -->
     <script>
         // ==========================================
         // CONFIGURACIÓN GENERAL DEL SITIO
@@ -259,20 +278,49 @@
         // y pega el nuevo enlace dentro de src="...".
 
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Actualizar Nombre del Doctor
+            // 1. Lógica del Menú Móvil
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            // Abrir/Cerrar menú
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                // Cambiar ícono opcionalmente (barras a X)
+                const icon = menuBtn.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            });
+
+            // Cerrar menú al hacer click en un enlace
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                });
+            });
+
+            // 2. Actualizar Nombre del Doctor
             const nameElements = document.querySelectorAll('.doctor-name');
             nameElements.forEach(el => {
                 el.textContent = CONFIG.nombreDoctor;
             });
             document.title = `Consultorio Odontológico | ${CONFIG.nombreDoctor}`;
 
-            // 2. Actualizar texto del teléfono
+            // 3. Actualizar texto del teléfono
             const phoneDisplay = document.getElementById('phone-display');
             if (phoneDisplay) {
                 phoneDisplay.textContent = CONFIG.whatsappDisplay;
             }
 
-            // 3. Actualizar enlaces de WhatsApp
+            // 4. Actualizar enlaces de WhatsApp
             const whatsappLinks = document.querySelectorAll('.whatsapp-link');
             whatsappLinks.forEach(link => {
                 const rawMessage = link.getAttribute('data-message') || "Hola, quisiera realizar una consulta.";
